@@ -1,0 +1,20 @@
+#!/bin/bash
+# filepath: ex03/count_files.sh
+
+count=$(find . -maxdepth 1 -type f -o -type d | wc -l)
+echo $count
+chmod +x ex03/count_files.sh
+./ex03/count_files.sh
+#!/bin/bash
+# filepath: ex04/argv.sh
+
+if [ $# -eq 0 ]; then
+    echo "No arguments supplied"
+else
+    for arg in "$@"
+    do
+        echo "$arg"
+    done
+fi
+chmod +x ex04/argv.sh
+./ex04/argv.sh arg1 arg2 arg3
